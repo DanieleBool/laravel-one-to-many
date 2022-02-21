@@ -36,6 +36,13 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <div class="mb-3">
+                                            @if ($post->category != null)
+                                                <h5><span class="badge badge-secondary">{{$post->category->name}}</span></h5>
+                                            @endif
+                                        </div>
+                                    </td>
+                                    <td>
                                         <a href="{{route("posts.show", $post->id)}}"><button type="button" class="btn btn-primary my-1">Visualizza</button></a>
                                         <a href="{{route("posts.edit", $post->id)}}"><button type="button" class="btn btn-warning my-1">Modifica</button></a>
                                         <form class="d-inline" action="{{route("posts.destroy", $post->id)}}" method="POST">

@@ -19,9 +19,14 @@
                     </div>
                     <div class="mb-3">
                         @if ($post->published)
-                            <h5>Stato: <span class="badge badge badge-success">Pubblicato</span></h5>
+                            <h5>Stato: <span class="badge badge-success">Pubblicato</span></h5>
                         @else
-                            <h5>Stato: <span class="badge badge badge-info text-white">Bozza</span></h5>
+                            <h5>Stato: <span class="badge badge-info text-white">Bozza</span></h5>
+                        @endif
+                    </div>
+                    <div class="my-3">
+                        @if ($post->category != null)
+                        <h5>Categoria: <span class="badge badge-primary">{{$post->category->name}}</span></h5>
                         @endif
                     </div>
                     <div class="border rounded border-gray p-3">
